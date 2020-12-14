@@ -1,13 +1,16 @@
 import React from 'react'
+import { Card } from '../card/card.component'
 import './card-list.style.css'
 
-export const CardList =()=>(
+export const CardList =(props)=>(
     <div className='card-list'>
-    <div className= 'class-constainer'>
-      <img  alt='Monster' src='https://robohash.org/1?set=set2&size=180x180'/>
-      <h2>Monster Name</h2>
-      <p>Email</p>
-    </div>
-
+     {
+  props.monster.map(monsterObj =>(
+    <Card  key = {monsterObj.id} monster={monsterObj}/>
+  )
+  )   
+  }    
   </div>
 )
+// <Card/>
+//key ={monsterObj.id}
